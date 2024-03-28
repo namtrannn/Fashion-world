@@ -9,7 +9,7 @@ function Sliders() {
     const dispatch = useDispatch();
 
     return (
-        <div className='relative pb-4'>
+        <div className='relative pb-4 overflow-hidden'>
             <div className='w-full'>
                 {sliderData.map((item, index) => (
                     <div
@@ -40,8 +40,8 @@ function Sliders() {
                         <div
                             className={
                                 index === slideIndex
-                                    ? "bg-green-500 rounded-full p-4 cursor-pointer"
-                                    : "bg-white rounded-full p-4 cursor-pointer"
+                                    ? "bg-green-500 rounded-full p-3 cursor-pointer"
+                                    : "bg-white rounded-full p-3 cursor-pointer"
                             }
                             onClick={() => dispatch(dotSlider(index))}
                         ></div>

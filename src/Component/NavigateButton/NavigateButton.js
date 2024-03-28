@@ -39,9 +39,11 @@ const NavigateButton = () => {
             }
         </div>
         {/* -----------Sale up to----------- */}
-        <div className='bg-green-300 p-2 w-[55%] mx-auto rounded-md'>
-            <h3 className='text-orange-900 font-inter font-bold text-lg text-center tracking-normal leading-none'>SALES UP TO 50%</h3>
-        </div>
+        <div className='bg-black p-2 rounded-md mx-auto w-[50%]'>
+        <h3 className='text-red-600 text-center text-lg font-inter font-bold tracking-normal leading-none'>
+            SALES UP TO 50%
+        </h3>
+      </div>
         {/* -----------Clothes --------------*/}
         <div className='flex justify-center items-center py-4'>
             <img 

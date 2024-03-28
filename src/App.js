@@ -7,15 +7,14 @@ import { useSelector } from 'react-redux';
 
 function App() {
 
-  const card = useSelector((state) => state.card.card)
-  const amount = useSelector((state) => state.card.amount)
-  const totalAmount = useSelector((state) => state.card.totalAmount)
-  const totalPrice = useSelector((state) => state.card.totalPrice)
+  const cart = useSelector((state) => state.cart.cart)
+  const totalAmount = useSelector((state) => state.cart.totalAmount)
+  const totalPrice = useSelector((state) => state.cart.totalPrice)
 
-  console.log("card",card)
-  console.log("amount",amount)
-  console.log("totalAmount",totalAmount)
-  console.log("totalPrice",totalPrice)
+  // console.log("cart",cart)
+  // console.log("totalAmount",totalAmount)
+  // console.log("totalPrice",totalPrice)
+  
   return (
     <>
       <BrowserRouter>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { Tooltip , Button } from "@material-tailwind/react"
-import { addToCard } from '../../featurs/slices/cardSlices'
+import { addToCart } from '../../featurs/slices/cartSlices'
 import { useDispatch } from 'react-redux'
 
 const SingleProduct = () => {
@@ -10,10 +10,11 @@ const SingleProduct = () => {
     const product = useSelector((state) => state.products.singleProduct)
     
     const productSize = product[0].size ? product[0].size[0] : ""
-    const productColor = product[0].color
+    const productColor = product[0].color[0]
 
     const [size, setSize] = useState(productSize)
     const [color, setColor] = useState(productColor)
+    
     const { id } = useParams()
 
   return (
@@ -113,7 +114,8 @@ const SingleProduct = () => {
                                                   name= "color"
                                                   value={color}
                                                   onChange={(e) => setColor(e.target.value)}
-                                                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            >
                                                 {
                                                   item.color.map((color,index) => {
                                                     return (
@@ -129,17 +131,19 @@ const SingleProduct = () => {
                                       <div>
                                         <Tooltip className='p-2 bg-blue-500' content="ADD TO CARD" placement="bottom" color="blue">
                                               <Button className=' text-md px-2 bg-black'
-                                                      onClick={() => dispatch(addToCard({
+                                                      onClick={() => dispatch(addToCart({
                                                           id: item.id,
                                                           name: item.name,
+                                                          img: item.img,
+                                                          text: item.text,
                                                           size: size,
-                                                          color: {color},
+                                                          color: color,
                                                           price: item.price,
                                                           amount: 1,
                                                           totalPrice: item.price
                                                         }))
                                                       }
-                                              >
+                                                >
                                                 ADD TO CARD
                                               </Button>
                                         </Tooltip>   
