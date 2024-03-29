@@ -42,7 +42,7 @@ const ProductSectionItem = ({
           <Typography variant="h4" color="blue-gray" className="mb-2 text-black ">
             {name}
           </Typography>
-          <Typography color="gray" className="font-medium text-gray-400 " textGradient>
+          <Typography color="gray" className="font-medium font-inter text-gray-400 " textGradient>
             {text}
           </Typography>
           <div className="flex justify-between items-center pt-4">

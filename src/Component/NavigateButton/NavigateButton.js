@@ -29,9 +29,9 @@ const NavigateButton = () => {
                         <Link to={'/FilteredProduct/' + button}>
                             <button 
                                 onClick={() => dispath(filteredProduct(button))}
-                                className='bg-white cursor-pointer border-green-300 w-24 h-10 rounded-xl text-green-700 font-inter font-bold hover:bg-green-300 duration-300 ease-in-out'
+                                className='bg-white cursor-pointer border-black w-24 h-10 rounded-xl text-black font-inter font-bold hover:bg-gray-300 duration-300 ease-in-out'
                             >
-                                {button}
+                                {button}    
                             </button> 
                         </Link>     
                     </div>
